@@ -44,7 +44,7 @@ export function SplitScreenSection() {
   return (
     <section ref={sectionRef} className="relative bg-[#0a0a0a]" data-split-screen>
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div ref={leftColumnRef} className="relative h-screen sticky top-0 overflow-hidden border-r border-[#2a2a2a]" data-sticky-image>
+        <div ref={leftColumnRef} className="relative h-screen top-0 overflow-hidden border-r border-[#2a2a2a]" data-sticky-image>
           <div className="absolute inset-0 bg-[#0f0f0f]">
             <div className="grid-pattern absolute inset-0 opacity-[0.02] will-change-transform">
               <div className="h-full w-full" style={{ backgroundImage: GRID_PATTERN, backgroundSize: '80px 80px' }} />
@@ -53,7 +53,7 @@ export function SplitScreenSection() {
             <div className="absolute inset-0 flex flex-col items-start justify-center p-20">
               <div className="mb-16">
                 <div className="mono text-sm text-[#707070] tracking-[0.3em] uppercase">Professional Journey</div>
-                <div className="w-24 h-[1px] bg-[#2a2a2a] mt-4" />
+                <div className="w-24 h-[px] bg-[#2a2a2a] mt-4" />
               </div>
 
               <div className="text-left space-y-4 mb-16">
@@ -66,9 +66,9 @@ export function SplitScreenSection() {
               </div>
                 
               <div className="flex items-center justify-start gap-6">
-                <div className="w-16 h-[1px] bg-[#303030]" />
+                <div className="w-16 h-[px] bg-[#303030]" />
                 <div className="mono text-[11px] text-[#606060] tracking-wider">5+ YEARS</div>
-                <div className="w-16 h-[1px] bg-[#303030]" />
+                <div className="w-16 h-[px] bg-[#303030]" />
               </div>
 
               <div ref={statsRef} className="absolute bottom-32 left-20 grid grid-cols-3 gap-12">
@@ -82,13 +82,13 @@ export function SplitScreenSection() {
 
               <div className="absolute bottom-12 left-20 flex flex-col items-start gap-4">
                 <div className="mono text-[10px] text-[#505050] tracking-wider">SCROLL TO EXPLORE</div>
-                <div className="w-[1px] h-8 bg-[#2a2a2a]" />
+                <div className="w-[px] h-8 bg-[#2a2a2a]" />
               </div>
             </div>
 
             <div className="absolute top-12 left-12"><div className="mono text-[10px] text-[#505050] tracking-wider uppercase">Career Path</div></div>
             <div className="absolute bottom-12 right-12"><div className="mono text-[10px] text-[#505050] tracking-wider">2022 — 2026</div></div>
-            <div className="absolute top-0 left-20 w-[1px] h-24 bg-gradient-to-b from-[#2a2a2a] to-transparent" />
+            <div className="absolute top-0 left-20 w-[px] h-24 bg-linear-to-b from-[#2a2a2a] to-transparent" />
           </div>
         </div>
 
@@ -96,7 +96,7 @@ export function SplitScreenSection() {
           <div className="py-24 px-4 lg:px-12">
             <div className="mb-12">
               <div className="flex items-center gap-6 mb-6">
-                <div className="w-8 h-[1px] bg-[#2a2a2a]" />
+                <div className="w-8 h-[px] bg-[#2a2a2a]" />
                 <div className="mono text-sm text-[#606060] tracking-[0.3em] uppercase">Career Path</div>
               </div>
               <p className="text-[#505050] leading-[1.6] text-sm italic">Click on any position to expand details.</p>
@@ -116,7 +116,7 @@ export function SplitScreenSection() {
                       <div className={`text-xl text-[#404040] group-hover:text-[#808080] transition-all duration-300 pt-2 md:pt-0 ${isExpanded ? 'rotate-45' : 'rotate-0'}`}>+</div>
                     </button>
 
-                    <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isExpanded ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isExpanded ? 'max-h-200 opacity-100' : 'max-h-0 opacity-0'}`}>
                       <div className="pb-16 pt-2 pl-0 md:pl-44 pr-0 md:pr-16">
                         <div className="mb-8"><p className="text-[#808080] leading-[1.6] text-lg">{experience.description}</p></div>
                         <div className="flex flex-wrap gap-2">

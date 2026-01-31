@@ -101,7 +101,7 @@ export function WebGLSlider() {
           <div className="lg:col-span-8" style={{ perspective: '1000px' }}>
             <div className="overflow-hidden mb-4">
               <div ref={subtitleRef} className="flex items-center gap-4">
-                <div className="w-12 h-[1px] bg-white/50" />
+                <div className="w-12 h-[px] bg-white/50" />
                 <span className="mono text-sm text-white/80 tracking-[0.3em] uppercase">{SLIDES[currentIndex].subtitle}</span>
               </div>
             </div>

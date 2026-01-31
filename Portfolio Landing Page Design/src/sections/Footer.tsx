@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const SOCIAL_LINKS = [
   { label: 'GitHub', href: 'https://github.com/Wysath', external: true },
-  { label: 'LinkedIn', href: '#', external: false },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/louna-petitfils/', external: true },
 ];
 const NAV_LINKS = ['Work', 'About', 'Services', 'Lab', 'Contact'];
 
