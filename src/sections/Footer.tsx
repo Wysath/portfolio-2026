@@ -8,7 +8,7 @@ const SOCIAL_LINKS = [
   { label: 'GitHub', href: 'https://github.com/Wysath', external: true },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/louna-petitfils/', external: true },
 ];
-const NAV_LINKS = ['Work', 'About', 'Services', 'Lab', 'Contact'];
+const NAV_LINKS = ['Home', 'Work', 'About', 'Contact'];
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -82,15 +82,7 @@ export function Footer() {
                 </ul>
               </div>
 
-              <div>
-                <div className="flex items-center gap-3 mb-12">
-                  <div className="w-8 h-px bg-[#303030]" />
-                  <div className="mono text-sm text-[#707070] tracking-[0.3em] uppercase">Follow</div>
-                </div>
-                <ul className="space-y-8">
-                  <li><a href="#" className="text-xl text-[#a0a0a0] hover:text-white hover:translate-x-1 inline-block transition-all duration-300" data-cursor-hover>Dribbble</a></li>
-                </ul>
-              </div>
+
 
               <div>
                 <div className="flex items-center gap-3 mb-10">
@@ -98,9 +90,24 @@ export function Footer() {
                   <div className="mono text-sm text-[#707070] tracking-[0.3em] uppercase">Explore</div>
                 </div>
                 <ul className="space-y-6">
-                  {NAV_LINKS.map((link) => (
-                    <li key={link}><a href="#" className="text-xl text-[#a0a0a0] hover:text-white hover:translate-x-1 inline-block transition-all duration-300" data-cursor-hover>{link}</a></li>
-                  ))}
+                  {NAV_LINKS.map((link) => {
+                    let href = '#';
+                    if (link.toLowerCase() === 'work') href = '#work';
+                    else if (link.toLowerCase() === 'about') href = '#about';
+                    else if (link.toLowerCase() === 'contact') href = '#contact';
+                    else if (link.toLowerCase() === 'home') href = '/';
+                    return (
+                      <li key={link}>
+                        <a
+                          href={href}
+                          className="text-xl text-[#a0a0a0] hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
+                          data-cursor-hover
+                        >
+                          {link}
+                        </a>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
@@ -110,11 +117,7 @@ export function Footer() {
         <div className="border-t border-[#1a1a1a] px-12 lg:px-20 py-12">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
             <div className="mono text-[11px] text-[#606060] tracking-wider">© {currentYear} Creative Developer. All Rights Reserved.</div>
-            <div className="flex items-center gap-12">
-              <a href="#" className="mono text-[11px] text-[#707070] hover:text-white transition-colors tracking-wider" data-cursor-hover>Privacy Policy</a>
-              <a href="#" className="mono text-[11px] text-[#707070] hover:text-white transition-colors tracking-wider" data-cursor-hover>Terms of Use</a>
-              <div className="mono text-[11px] text-[#505050] tracking-wider">Made with ♥</div>
-            </div>
+            <div className="mono text-[11px] text-[#505050] tracking-wider">Made with ♥</div>
           </div>
         </div>
       </div>

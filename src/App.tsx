@@ -12,6 +12,7 @@ import { Footer } from './sections/Footer';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
+import { ProjectDetail } from './pages/ProjectDetail';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,6 +55,7 @@ function AnimatedRoutes({ isPreloaderActive }: { isPreloaderActive: boolean }) {
         <Route path="/" element={<PageWrapper><Home isPreloaderActive={isPreloaderActive} /></PageWrapper>} />
         <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
         <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
+        <Route path="/project/:slug" element={<PageWrapper><ProjectDetail /></PageWrapper>} />
       </Routes>
     </AnimatePresence>
   );

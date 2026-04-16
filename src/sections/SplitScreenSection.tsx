@@ -44,7 +44,7 @@ export function SplitScreenSection() {
   return (
     <section ref={sectionRef} className="relative bg-[#0a0a0a]" data-split-screen>
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div ref={leftColumnRef} className="relative h-screen top-0 overflow-hidden border-r border-[#2a2a2a]" data-sticky-image>
+        <div ref={leftColumnRef} className="relative min-h-screen top-0 border-r border-[#2a2a2a]" data-sticky-image>
           <div className="absolute inset-0 bg-[#0f0f0f]">
             <div className="grid-pattern absolute inset-0 opacity-[0.02] will-change-transform">
               <div className="h-full w-full" style={{ backgroundImage: GRID_PATTERN, backgroundSize: '80px 80px' }} />
@@ -132,10 +132,17 @@ export function SplitScreenSection() {
             </div>
 
             <div className="mt-24 pt-12 flex justify-end">
-              <button className="group flex items-center gap-2 text-[#707070] hover:text-white transition-colors duration-300" data-cursor-hover>
+              <a
+                href="../cv_louna_petitfils.pdf"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 text-[#707070] hover:text-white transition-colors duration-300"
+                data-cursor-hover
+              >
                 <span className="mono text-[11px] tracking-[0.15em] uppercase">Download Full Resume</span>
                 <span className="text-sm group-hover:translate-x-1 transition-transform">→</span>
-              </button>
+              </a>
             </div>
           </div>
         </div>

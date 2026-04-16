@@ -6,7 +6,8 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { label: 'WORK', href: '/' },
+    { label: 'HOME', href: '/' },
+    { label: 'WORK', href: '/#work' },
     { label: 'ABOUT', href: '/about' },
     { label: 'CONTACT', href: '/contact' },
   ];
@@ -55,16 +56,29 @@ export function Navigation() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
                 >
-                  <Link
-                    to={item.href}
-                    className="block"
-                    onClick={() => setIsOpen(false)}
-                    data-cursor-hover
-                  >
-                    <h2 className="text-[clamp(3rem,6vw,6rem)] font-black tracking-tighter text-white hover:italic transition-all">
-                      {item.label}
-                    </h2>
-                  </Link>
+                  {item.href.startsWith('#') ? (
+                    <a
+                      href={item.href}
+                      className="block"
+                      onClick={() => setIsOpen(false)}
+                      data-cursor-hover
+                    >
+                      <h2 className="text-[clamp(3rem,6vw,6rem)] font-black tracking-tighter text-white hover:italic transition-all">
+                        {item.label}
+                      </h2>
+                    </a>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      className="block"
+                      onClick={() => setIsOpen(false)}
+                      data-cursor-hover
+                    >
+                      <h2 className="text-[clamp(3rem,6vw,6rem)] font-black tracking-tighter text-white hover:italic transition-all">
+                        {item.label}
+                      </h2>
+                    </Link>
+                  )}
                 </motion.div>
               ))}
 

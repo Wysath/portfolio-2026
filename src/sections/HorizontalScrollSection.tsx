@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 
 export function HorizontalScrollSection() {
@@ -25,17 +26,17 @@ export function HorizontalScrollSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative bg-[#0a0a0a]" style={{ height: '300vh' }} data-scroll-section data-horizontal-scroll>
+    <section id="work" ref={sectionRef} className="relative bg-[#0a0a0a]" style={{ height: '300vh' }} data-scroll-section data-horizontal-scroll>
       <div className="sticky top-0 h-screen overflow-hidden">
         <div className="absolute top-12 left-12 z-10 mix-blend-difference">
           <div className="mono text-xs">SELECTED WORK</div>
-          <div className="mono text-xs text-[#a0a0a0] mt-1">04 PROJECTS</div>
+          <div className="mono text-xs text-[#a0a0a0] mt-1">05 PROJECTS</div>
         </div>
 
         <div className="h-full flex items-center">
           <div ref={trackRef} className="flex gap-8 px-24" data-horizontal-track style={{ willChange: 'transform' }}>
             {projects.map((project) => (
-              <div key={project.id} className="shrink-0 w-[70vw] h-[75vh] bg-[#141414] relative group overflow-hidden" data-cursor-hover data-project-card>
+              <Link key={project.id} to={`/project/${project.slug}`} className="shrink-0 w-[70vw] h-[75vh] bg-[#141414] relative group overflow-hidden cursor-pointer" data-cursor-hover data-project-card>
                 <div className="absolute inset-0 border border-[#2a2a2a] p-12 flex flex-col justify-between transition-colors duration-300 group-hover:border-white">
                   <div>
                     <div className="mono text-xs text-[#a0a0a0] mb-4">{project.id} — {project.category}</div>
@@ -56,11 +57,11 @@ export function HorizontalScrollSection() {
                     <p className="mb-4 text-[#a0a0a0]">{project.description}</p>
                     <div className="flex justify-between items-end">
                       <div className="mono text-xs">{project.year}</div>
-                      <div className="mono text-xs group-hover:translate-x-2 transition-transform">VIEW PROJECT →</div>
+                      <div className="text-sm text-[#707070] group-hover:text-[#a0a0a0] transition-colors">View Project →</div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

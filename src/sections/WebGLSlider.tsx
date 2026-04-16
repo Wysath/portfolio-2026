@@ -113,10 +113,6 @@ export function WebGLSlider() {
           <div className="lg:col-span-4 flex flex-col justify-end h-full pt-12 lg:pt-32">
             <div ref={descriptionRef} className="space-y-8">
               <p className="text-lg text-white/80 leading-relaxed max-w-md">{SLIDES[currentIndex].description}</p>
-              <a href="#" className="inline-flex items-center gap-4 px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white hover:text-black text-white transition-all duration-300 group" data-cursor-hover>
-                <span className="mono text-sm tracking-wider">VIEW PROJECT</span>
-                <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-              </a>
             </div>
           </div>
         </div>
